@@ -607,9 +607,10 @@ _data = {
 "walking_up": SubResource("Animation_ejhfy")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator")]
 script = ExtResource("1_8y3v2")
 _movement_velocity = 256.0
+_player_animator = NodePath("PlayerAnimator")
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_4umdh")
