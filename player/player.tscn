@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://64lwsd23p571"]
+[gd_scene load_steps=18 format=3 uid="uid://64lwsd23p571"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8y3v2"]
 [ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/standard_actions.png" id="2_4umdh"]
@@ -64,6 +64,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackArea/CollisionArea:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_tbw8v"]
@@ -658,6 +670,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackArea/CollisionArea:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_7c3ho"]
 resource_name = "attack_right"
@@ -722,6 +746,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackArea/CollisionArea:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_g0hiu"]
@@ -788,6 +824,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackArea/CollisionArea:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_qfba6"]
 resource_name = "attack_up"
@@ -853,6 +901,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackArea/CollisionArea:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28hla"]
 _data = {
@@ -871,13 +931,17 @@ _data = {
 "walking_up": SubResource("Animation_ejhfy")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator", "_action_timer")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcon8"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator", "_action_timer", "_attack_area")]
 script = ExtResource("1_8y3v2")
 _movement_velocity = 96.0
 _player_animator = NodePath("PlayerAnimator")
 _action_timer = NodePath("ActionTimer")
+_attack_area = NodePath("AttackArea")
 
 [node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(0.5, -7)
 texture = ExtResource("2_4umdh")
 hframes = 6
 vframes = 10
@@ -889,5 +953,12 @@ libraries = {
 
 [node name="ActionTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="CollisionArea" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_jcon8")
+disabled = true
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]

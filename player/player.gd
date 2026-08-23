@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var _movement_velocity: float = 128.0
 @export var _player_animator: AnimationPlayer
 @export var _action_timer: Timer
+@export var _attack_area: Area2D
 
 var _can_attack: bool = true
 var _animation_suffix: String = "_down"
@@ -24,17 +25,21 @@ func _character_suffix() -> String:
 	var _horizontal_input: float = Input.get_axis("move_left", "move_right")
 	
 	if _horizontal_input == -1:
+		_attack_area.position = Vector2(-15, 0)
 		return "_left"
 	
 	if _horizontal_input == +1:
+		_attack_area.position = Vector2(+16, 0)
 		return "_right"
 	
 	var _vertical_input: float = Input.get_axis("move_up", "move_down")
 	
 	if _vertical_input == -1:
+		_attack_area.position = Vector2(0, -12)
 		return "_up"
 	
 	if _vertical_input == +1:
+		_attack_area.position = Vector2(0, +12)
 		return "_down"
 	return _animation_suffix
 
