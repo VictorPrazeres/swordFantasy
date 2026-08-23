@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var _action_timer: Timer
 @export var _attack_area: Area2D
 
+var _current_weapon: String = "sword"
+
 var _can_attack: bool = true
 var _animation_suffix: String = "_down"
 
@@ -46,7 +48,7 @@ func _character_suffix() -> String:
 
 func _attack() -> void:
 	if Input.is_action_just_pressed("attack") and _can_attack:
-		_player_animator.play("attack" + _animation_suffix)
+		_player_animator.play("attack_" + _current_weapon + _animation_suffix)
 		_action_timer.start(0.4)
 		_can_attack = false
 		set_physics_process(false)
