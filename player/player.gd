@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var _player_animator: AnimationPlayer
 @export var _action_timer: Timer
 @export var _attack_area: Area2D
+@export var _current_weapon_text: Label
 
 var _current_weapon: String = "sword"
 
@@ -19,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 	_animation_suffix = _character_suffix()
+	_set_current_weapon()
 	_attack()
 	_animate()
 
@@ -44,6 +46,20 @@ func _character_suffix() -> String:
 		_attack_area.position = Vector2(0, +12)
 		return "_down"
 	return _animation_suffix
+
+
+func _set_current_weapon() -> void:
+	if Input.is_action_just_pressed("sword"):
+		_current_weapon = "sword"
+	if Input.is_action_just_pressed("pickaxe"):
+		_current_weapon = "pickaxe"
+	if Input.is_action_just_pressed("axe"):
+		_current_weapon = "axe"
+	if Input.is_action_just_pressed("hoe"):
+		_current_weapon = "hoe"
+	if Input.is_action_just_pressed("watering_can"):
+		_current_weapon = "watering_can"
+	_current_weapon_text.text = _current_weapon
 
 
 func _attack() -> void:

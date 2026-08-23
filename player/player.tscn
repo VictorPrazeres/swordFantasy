@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://64lwsd23p571"]
+[gd_scene load_steps=36 format=3 uid="uid://64lwsd23p571"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8y3v2"]
 [ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/standard_actions.png" id="2_4umdh"]
@@ -2182,12 +2182,16 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcon8"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator", "_action_timer", "_attack_area")]
+[sub_resource type="LabelSettings" id="LabelSettings_dfjxq"]
+font_size = 8
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator", "_action_timer", "_attack_area", "_current_weapon_text")]
 script = ExtResource("1_8y3v2")
 _movement_velocity = 96.0
 _player_animator = NodePath("PlayerAnimator")
 _action_timer = NodePath("ActionTimer")
 _attack_area = NodePath("AttackArea")
+_current_weapon_text = NodePath("Label")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(0.5, -7)
@@ -2209,5 +2213,23 @@ position = Vector2(0, 8)
 [node name="CollisionArea" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_jcon8")
 disabled = true
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -34.0
+offset_right = 40.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sword"
+label_settings = SubResource("LabelSettings_dfjxq")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
