@@ -11,7 +11,7 @@ var _current_weapon: String = "sword"
 var _can_attack: bool = true
 var _animation_suffix: String = "_down"
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	var direcao = Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
 	)
@@ -67,7 +67,7 @@ func _attack() -> void:
 		_player_animator.play("attack_" + _current_weapon + _animation_suffix)
 		_action_timer.start(0.4)
 		_can_attack = false
-		set_physics_process(false)
+		set_process(false)
 
 
 func _animate() -> void:
@@ -80,5 +80,5 @@ func _animate() -> void:
 
 
 func _on_action_timer_timeout() -> void:
-	set_physics_process(true)
+	set_process(true)
 	_can_attack = true

@@ -2232,4 +2232,8 @@ label_settings = SubResource("LabelSettings_dfjxq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
