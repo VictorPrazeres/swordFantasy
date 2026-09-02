@@ -9,6 +9,7 @@
 radius = 8.0
 
 [node name="Rock" instance=ExtResource("1_uqlbb")]
+required_tool = "pickaxe"
 
 [node name="Collision" parent="." index="0"]
 position = Vector2(0, -4)

@@ -10,6 +10,7 @@ radius = 4.0
 radius = 4.12311
 
 [node name="SmallTree" instance=ExtResource("1_x8mmd")]
+required_tool = "axe"
 
 [node name="Collision" parent="." index="0"]
 position = Vector2(0, -1)

@@ -10,6 +10,7 @@ radius = 8.0
 size = Vector2(14, 6)
 
 [node name="Chest" instance=ExtResource("1_rct03")]
+required_tool = "axe"
 
 [node name="Collision" parent="." index="0"]
 position = Vector2(0, -5)

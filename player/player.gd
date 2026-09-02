@@ -82,3 +82,8 @@ func _animate() -> void:
 func _on_action_timer_timeout() -> void:
 	set_process(true)
 	_can_attack = true
+
+
+func _on_attack_area_area_entered(_area: Area2D) -> void:
+	if _current_weapon == _area.required_tool:
+		_area.losing_health(randi_range(1, 5))

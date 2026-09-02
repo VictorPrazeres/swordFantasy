@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://64lwsd23p571"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8y3v2"]
-[ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/standard_actions.png" id="2_4umdh"]
+[ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/textures/standard_actions.png" id="2_4umdh"]
 [ext_resource type="Texture2D" uid="uid://bsp43ko8uj3dv" path="res://player/textures/actions.png" id="3_g14dd"]
 
 [sub_resource type="Animation" id="Animation_sj5p2"]
@@ -2243,3 +2243,4 @@ position_smoothing_speed = 2.0
 shape = SubResource("CircleShape2D_o1p4p")
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
