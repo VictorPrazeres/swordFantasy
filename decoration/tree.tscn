@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cek15tes8f4l0"]
+
+[ext_resource type="PackedScene" uid="uid://bf276k4tehb1k" path="res://decoration/base_object.tscn" id="1_odqop"]
+[ext_resource type="Texture2D" uid="uid://b5veveidcso6e" path="res://decoration/Oak_Tree.png" id="2_r6l02"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3l0r"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfq5v"]
+radius = 7.0
+
+[node name="Tree" instance=ExtResource("1_odqop")]
+
+[node name="Collision" parent="." index="0"]
+shape = SubResource("CircleShape2D_j3l0r")
+
+[node name="PhysicalCollision" parent="PhysicalBody" index="0"]
+shape = SubResource("CircleShape2D_vfq5v")
+
+[node name="Texture" parent="." index="2"]
+position = Vector2(0, -20)
+texture = ExtResource("2_r6l02")
