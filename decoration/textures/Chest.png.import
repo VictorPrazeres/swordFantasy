@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bexryr7cxlu08"
-path="res://.godot/imported/Outdoor_Decor_Free.png-47231dca992cc8c16017b0384e3a0c9d.ctex"
+uid="uid://bxkannkq87wi8"
+path="res://.godot/imported/Chest.png-086f063a321c56cbf44988032d62763f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://decoration/Outdoor_Decor_Free.png"
-dest_files=["res://.godot/imported/Outdoor_Decor_Free.png-47231dca992cc8c16017b0384e3a0c9d.ctex"]
+source_file="res://decoration/textures/Chest.png"
+dest_files=["res://.godot/imported/Chest.png-086f063a321c56cbf44988032d62763f.ctex"]
 
 [params]
 

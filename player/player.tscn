@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8y3v2"]
 [ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/standard_actions.png" id="2_4umdh"]
-[ext_resource type="Texture2D" uid="uid://bsp43ko8uj3dv" path="res://player/actions.png" id="3_g14dd"]
+[ext_resource type="Texture2D" uid="uid://bsp43ko8uj3dv" path="res://player/textures/actions.png" id="3_g14dd"]
 
 [sub_resource type="Animation" id="Animation_sj5p2"]
 length = 0.001

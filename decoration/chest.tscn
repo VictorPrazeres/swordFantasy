@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://fybg6vogpq7n"]
+
+[ext_resource type="PackedScene" uid="uid://bf276k4tehb1k" path="res://decoration/base_object.tscn" id="1_rct03"]
+[ext_resource type="Texture2D" uid="uid://bxkannkq87wi8" path="res://decoration/textures/Chest.png" id="2_yil4g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ficfi"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uoa4"]
+size = Vector2(14, 6)
+
+[node name="Chest" instance=ExtResource("1_rct03")]
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_ficfi")
+
+[node name="PhysicalCollision" parent="PhysicalBody" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_3uoa4")
+
+[node name="Texture" parent="." index="2"]
+position = Vector2(0, -6)
+texture = ExtResource("2_yil4g")

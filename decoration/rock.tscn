@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct51ucu0u266g"]
+
+[ext_resource type="PackedScene" uid="uid://bf276k4tehb1k" path="res://decoration/base_object.tscn" id="1_uqlbb"]
+[ext_resource type="Texture2D" uid="uid://bexryr7cxlu08" path="res://decoration/textures/Outdoor_Decor_Free.png" id="2_x4sic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2nl0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e58dp"]
+radius = 8.0
+
+[node name="Rock" instance=ExtResource("1_uqlbb")]
+
+[node name="Collision" parent="." index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_e2nl0")
+
+[node name="PhysicalCollision" parent="PhysicalBody" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_e58dp")
+
+[node name="Texture" parent="." index="2"]
+position = Vector2(0, -5)
+texture = ExtResource("2_x4sic")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)

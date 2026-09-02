@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktfp7myv7thr"
-path="res://.godot/imported/Oak_Tree_Small.png-2d046f57dce45a934b686bc9d23892cc.ctex"
+uid="uid://bwxcypvr0o2wq"
+path="res://.godot/imported/Bridge_Wood.png-47790ed1f7a95de8d43ab4a394925509.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://decoration/Oak_Tree_Small.png"
-dest_files=["res://.godot/imported/Oak_Tree_Small.png-2d046f57dce45a934b686bc9d23892cc.ctex"]
+source_file="res://decoration/textures/Bridge_Wood.png"
+dest_files=["res://.godot/imported/Bridge_Wood.png-47790ed1f7a95de8d43ab4a394925509.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5veveidcso6e"
-path="res://.godot/imported/Oak_Tree.png-2017096d3a39397b846f77ad3e92f86d.ctex"
+uid="uid://bexryr7cxlu08"
+path="res://.godot/imported/Outdoor_Decor_Free.png-357fb60568bc400e18bad3ec53665a58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://decoration/Oak_Tree.png"
-dest_files=["res://.godot/imported/Oak_Tree.png-2017096d3a39397b846f77ad3e92f86d.ctex"]
+source_file="res://decoration/textures/Outdoor_Decor_Free.png"
+dest_files=["res://.godot/imported/Outdoor_Decor_Free.png-357fb60568bc400e18bad3ec53665a58.ctex"]
 
 [params]
 

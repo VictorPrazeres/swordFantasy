@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw6yqssj0yqvu"]
 
 [ext_resource type="PackedScene" uid="uid://bf276k4tehb1k" path="res://decoration/base_object.tscn" id="1_x8mmd"]
-[ext_resource type="Texture2D" uid="uid://dktfp7myv7thr" path="res://decoration/Oak_Tree_Small.png" id="2_c1mpn"]
+[ext_resource type="Texture2D" uid="uid://dktfp7myv7thr" path="res://decoration/textures/Oak_Tree_Small.png" id="2_c1mpn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fnplp"]
 radius = 4.0
