@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://64lwsd23p571"]
+[gd_scene load_steps=37 format=3 uid="uid://64lwsd23p571"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8y3v2"]
 [ext_resource type="Texture2D" uid="uid://dbvb3l1ul74le" path="res://player/standard_actions.png" id="2_4umdh"]
@@ -2185,6 +2185,9 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_dfjxq"]
 font_size = 8
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o1p4p"]
+radius = 4.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animator", "_action_timer", "_attack_area", "_current_weapon_text")]
 script = ExtResource("1_8y3v2")
 _movement_velocity = 96.0
@@ -2235,5 +2238,8 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o1p4p")
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
