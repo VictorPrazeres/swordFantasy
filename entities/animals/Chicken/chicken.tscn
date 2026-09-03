@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dig43pjwmtscx"]
+
+[ext_resource type="PackedScene" uid="uid://cunmt30peyvai" path="res://entities/animals/base_animal.tscn" id="1_qefh7"]
+[ext_resource type="Texture2D" uid="uid://ivwedhehoti1" path="res://entities/animals/Chicken/Chicken.png" id="2_0pix3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vhicj"]
+radius = 4.0
+
+[node name="Chicken" instance=ExtResource("1_qefh7")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(0, -6)
+texture = ExtResource("2_0pix3")
+
+[node name="PhysicalCollision" parent="." index="1"]
+shape = SubResource("CircleShape2D_vhicj")

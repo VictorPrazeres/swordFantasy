@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8hdpomphn1vx"]
+
+[ext_resource type="PackedScene" uid="uid://cunmt30peyvai" path="res://entities/animals/base_animal.tscn" id="1_mun2p"]
+[ext_resource type="Texture2D" uid="uid://bgagdgskbyuf6" path="res://entities/animals/Pig/Pig.png" id="2_c2sku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2r42h"]
+radius = 5.0
+
+[node name="Pig" instance=ExtResource("1_mun2p")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(0, -6)
+texture = ExtResource("2_c2sku")
+
+[node name="PhysicalCollision" parent="." index="1"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_2r42h")

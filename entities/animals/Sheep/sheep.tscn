@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8lnksrn03klk"]
+
+[ext_resource type="PackedScene" uid="uid://cunmt30peyvai" path="res://entities/animals/base_animal.tscn" id="1_uh4kn"]
+[ext_resource type="Texture2D" uid="uid://bohah7gkh52ss" path="res://entities/animals/Sheep/Sheep.png" id="2_fckck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmbjx"]
+radius = 5.0
+
+[node name="Sheep" instance=ExtResource("1_uh4kn")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(0, -6)
+texture = ExtResource("2_fckck")
+
+[node name="PhysicalCollision" parent="." index="1"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_tmbjx")
