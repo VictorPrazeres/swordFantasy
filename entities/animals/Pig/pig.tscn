@@ -15,3 +15,6 @@ texture = ExtResource("2_c2sku")
 [node name="PhysicalCollision" parent="." index="1"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_2r42h")
+
+[node name="Collision" parent="DamageArea" index="0"]
+position = Vector2(0, -1)

@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7ep35r30c568"]
+[gd_scene load_steps=3 format=3 uid="uid://c7ep35r30c568"]
 
 [ext_resource type="Script" path="res://entities/base_entity.gd" id="1_apdxy"]
 
-[node name="BaseEntity" type="CharacterBody2D" node_paths=PackedStringArray("_wander_time")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_x7f0q"]
+radius = 6.0
+
+[node name="BaseEntity" type="CharacterBody2D" node_paths=PackedStringArray("_wander_time", "_running_time", "_animator", "_texture")]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_apdxy")
 _wander_time = NodePath("WanderTime")
+_running_time = NodePath("RunningTime")
+_animator = NodePath("Animator")
+_texture = NodePath("Texture")
 
 [node name="Texture" type="Sprite2D" parent="."]
 
@@ -17,4 +23,13 @@ _wander_time = NodePath("WanderTime")
 [node name="WanderTime" type="Timer" parent="."]
 one_shot = true
 
+[node name="DamageArea" type="Area2D" parent="." groups=["damage_area"]]
+
+[node name="Collision" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("CircleShape2D_x7f0q")
+
+[node name="RunningTime" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="WanderTime" to="." method="_on_wander_time_timeout"]
+[connection signal="timeout" from="RunningTime" to="." method="_on_running_time_timeout"]

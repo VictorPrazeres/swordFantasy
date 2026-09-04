@@ -22,6 +22,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=768
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+damage_area=""
+
 [input]
 
 attack={
