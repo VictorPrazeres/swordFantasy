@@ -25,6 +25,8 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 damage_area=""
+player=""
+objects=""
 
 [input]
 

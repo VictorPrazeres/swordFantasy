@@ -179,6 +179,8 @@ _data = {
 }
 
 [node name="Slime" instance=ExtResource("1_vybn8")]
+_normal_move_speed = 48.0
+_is_hostile = true
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -8)
@@ -195,6 +197,3 @@ libraries = {
 "": SubResource("AnimationLibrary_uhu5w")
 }
 autoplay = "idle"
-
-[node name="Collision" parent="DamageArea" index="0"]
-position = Vector2(0, -1)

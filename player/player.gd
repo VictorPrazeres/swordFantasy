@@ -88,5 +88,7 @@ func _on_attack_area_area_entered(_area: Area2D) -> void:
 	if _area.is_in_group("damage_area"):
 		_area.get_parent().losing_health(randi_range(1, 5))
 		return
-	if _current_weapon == _area.required_tool:
-		_area.losing_health(randi_range(1, 5))
+	
+	if _area.is_in_group("objects"):
+		if _current_weapon == _area.required_tool:
+			_area.losing_health(randi_range(1, 5))

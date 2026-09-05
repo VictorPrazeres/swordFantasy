@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cbgi8m5qw0oql"]
+[gd_scene load_steps=9 format=4 uid="uid://cbgi8m5qw0oql"]
 
 [ext_resource type="PackedScene" uid="uid://cav7pioltv0o4" path="res://terrain/terrain.tscn" id="1_y6frh"]
 [ext_resource type="PackedScene" uid="uid://64lwsd23p571" path="res://player/player.tscn" id="2_7wjld"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://fybg6vogpq7n" path="res://decoration/chest.tscn" id="5_qope8"]
 [ext_resource type="PackedScene" uid="uid://ct51ucu0u266g" path="res://decoration/rock.tscn" id="6_lv0er"]
 [ext_resource type="PackedScene" uid="uid://dig43pjwmtscx" path="res://entities/animals/Chicken/chicken.tscn" id="7_sr65h"]
+[ext_resource type="PackedScene" uid="uid://bjid5dkoe2fkd" path="res://entities/enemies/slime.tscn" id="8_2gtfo"]
 
 [node name="Level" type="Node2D"]
 
@@ -100,5 +101,8 @@ position = Vector2(840, -62)
 position = Vector2(349, -44)
 motion_mode = 0
 platform_on_leave = 0
+
+[node name="Slime" parent="YSort" instance=ExtResource("8_2gtfo")]
+position = Vector2(586, -80)
 
 [editable path="Terrain"]

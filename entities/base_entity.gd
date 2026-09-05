@@ -7,7 +7,9 @@ extends CharacterBody2D
 @export var _normal_move_speed: float = 32.0
 @export var _running_move_speed: float = 64.0
 @export var _life: int = 10
+@export var _is_hostile: bool = false
 
+var player: CharacterBody2D
 var direction: Vector2
 var is_running: bool = false
 
@@ -20,17 +22,25 @@ func _physics_process(_delta: float) -> void:
 	velocity = _normal_move_speed * direction
 	if is_running:
 		velocity = _running_move_speed * direction
+	
+	if is_instance_valid(player):
+		direction = global_position.direction_to(player.global_position)
+		velocity = _normal_move_speed * direction
+	
 	move_and_slide()
 	
 	_bounce()
 	_animate()
 
-
 func _animate() -> void:
 	if velocity.x > 0:
 		_texture.flip_h = true
+		if _is_hostile:
+			_texture.flip_h = false
 	if velocity.x < 0:
 		_texture.flip_h = false
+		if _is_hostile:
+			_texture.flip_h = true
 	if velocity != Vector2(0, 0):
 		_animator.play("walking")
 		return
@@ -62,6 +72,8 @@ func _on_wander_time_timeout() -> void:
 func losing_health(_damage_received: int) -> void:
 	_life -= _damage_received
 	if _life > 0:
+		if _is_hostile:
+			return
 		direction = get_random_direction()
 		_running_time.start(5.0)
 		is_running = true
@@ -77,3 +89,18 @@ func _kill() -> void:
 func _on_running_time_timeout() -> void:
 	_wander_time.start(5.0)
 	is_running = false
+
+
+func _on_detection_area_body_entered(_body: Node2D) -> void:
+	if _is_hostile == false:
+		return
+	if _body.is_in_group("player"):
+		_wander_time.stop()
+		player = _body
+
+func _on_detection_area_body_exited(_body: Node2D) -> void:
+	if _is_hostile == false:
+		return
+	if _body.is_in_group("player"):
+		_wander_time.start(5.0)
+		player = null
